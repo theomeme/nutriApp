@@ -17,3 +17,4 @@ Thumbs.db
 
 # Ignore .coder directory or file
 .coder
+.coderignore
