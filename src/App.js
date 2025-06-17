@@ -5,19 +5,19 @@ import icon from "./Assets/icon.png";
 import profile from "./Assets/profile.png";
 import logo from "./Assets/vector.png";
 import Clientes from "./pages/Clientes";
-import Dashboard from "./pages/Dashboard";
 import Agendamentos from "./pages/Agendamentos";
 import Relatórios from "./pages/Relatórios";
+import Dashboard from "./pages/dashboardPage/Dashboard";
 
 function App() {
   return (
     <Router>
       <div>
         <div className="navbar">
-          <div className="logo-title">
+          <Link to="/dashboard" className="logo-title">
             <img src={logo} alt="logo-icon" className="logo-icon" />
             <div className="navbar-title">NutriTrack</div>
-          </div>
+          </Link>
           <div className="navbar-links">
             <Link to="/dashboard">Dashboard</Link>
             <Link to="/clientes">Clientes</Link>
