@@ -1,22 +1,27 @@
 import React from 'react';
 import './App.css';
+import icon from './Assets/icon.png'; 
+import profile from './Assets/profile.png'; 
+import logo from './Assets/vector.png'
 
 function App() {
   return (
-    <div className="App">
-      <nav className="navbar">
-        <div className="navbar-logo">
-          <span>NutriTrack</span>
+    <div className="navbar">
+      <div className='logo-title'>
+        <img src={logo} alt='logo-icon' className='logo-icon'/>
+        <div className="navbar-title">NutriTrack</div>
+      </div>
+      <div className="navbar-links">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#clientes">Clientes</a>
+        <a href="#agendamentos">Agendamentos</a>
+        <a href="#relatorios">Relatórios</a>
+        <div className="navbar-icons">
+          <img src={icon} alt="Notificações" className="notification-icon" />
+          <a href='#profile'><img src={profile} alt="Perfil" className="profile-icon" /></a>
         </div>
-        <ul className="navbar-list">
-          <li className="navbar-item"><a href="#dashboard">Dashboard</a></li>
-          <li className="navbar-item"><a href="#clientes">Clientes</a></li>
-          <li className="navbar-item"><a href="#agendamentos">Agendamentos</a></li>
-          <li className="navbar-item"><a href="#relatorios">Relatórios</a></li>
-        </ul>
-        <span className="navbar-icon"></span>
-        
-      </nav>
+      </div>
+      
     </div>
   );
 }
