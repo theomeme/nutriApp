@@ -1,7 +1,12 @@
 import React from "react";
 import "./QuickAgendamentos.css";
+import { UserProps } from "../../../../Interfaces/UserProps";
 
-function QuickAgendamentos() {
+interface Props {
+  userData: UserProps;
+}
+
+const QuickAgendamentos: React.FC<Props> = ({ userData }) => {
   const appointments = [
     {
       client: "Mariana Oliveira",
