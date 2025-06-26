@@ -1,4 +1,6 @@
+// src/components/Navbar.tsx
 import React from "react";
+import { Link } from "react-router-dom";
 import icon from "../Assets/icon.png";
 import profile from "../Assets/profile.png";
 
@@ -6,15 +8,15 @@ const Navbar: React.FC = () => {
   return (
     <div>
       <div className="navbar">
-        <a href="/" className="logo-title">
+        <Link to="/" className="logo-title">
           <img src="/logo.png" alt="NutriTrack Logo" className="logo-icon" />
           <span className="navbar-title">NutriTrack</span>
-        </a>
+        </Link>
         <div className="navbar-links">
-          <a href="/dashboard">Dashboard</a>
-          <a href="/clientes">Clientes</a>
-          <a href="/agendamentos">Agendamentos</a>
-          <a href="/relatorios">Relatórios</a>
+          <Link to="/dashboard">Dashboard</Link>
+          <Link to="/clientes">Clientes</Link>
+          <Link to="/agendamentos">Agendamentos</Link>
+          <Link to="/relatorios">Relatórios</Link>
         </div>
         <div className="navbar-icons">
           <img src={icon} alt="Notificações" className="notification-icon" />

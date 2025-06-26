@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.client-profile-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 240px;
+  background-color: white;
+  padding: 1.5rem;
+  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.user-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.user-profile h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.user-profile p {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li svg {
+  margin-right: 0.8rem;
+  color: #6c757d;
+}
+
+.menu li.active {
+  background-color: #f0f0f0;
+  font-weight: 500;
+}
+
+/* Main content styles */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+.main-content h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #6c757d;
+  font-size: 14px;
+  margin-bottom: 2rem;
+}
+
+/* Client header styles */
+.client-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.client-info {
+  display: flex;
+  align-items: center;
+}
+
+.client-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1.5rem;
+}
+
+.client-info h2 {
+  font-size: 20px;
+  margin-bottom: 0.2rem;
+}
+
+.client-info p {
+  color: #6c757d;
+  margin: 0;
+  font-size: 14px;
+}
+
+.edit-button {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #f8f9fa;
+}
+
+/* Tabs styles */
+.tabs {
+  display: flex;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.tabs button {
+  padding: 0.75rem 1rem;
+  margin-right: 1rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 14px;
+  color: #6c757d;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  color: #0d6efd;
+  border-bottom-color: #0d6efd;
+  font-weight: 500;
+}
+
+/* Tab content styles */
+.tab-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Personal details styles */
+.personal-details h2 {
+  font-size: 18px;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.detail-item h3 {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.detail-item p {
+  font-size: 16px;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.icon-wrapper {
+  display: inline-flex;
+  margin-right: 0.8rem;
+  color: #6c757d;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.menu li.active .icon-wrapper {
+  color: #0d6efd;
+}

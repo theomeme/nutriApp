@@ -1,6 +1,6 @@
 import { createBrowserRouter, Navigate, Outlet } from "react-router-dom";
 import Dashboard from "./pages/dashboardPage/Dashboard";
-import Clientes from "./pages/Clientes";
+import Clientes from "./pages/Clientes/Clientes";
 import Agendamentos from "./pages/Agendamentos";
 import Relatorios from "./pages/Relatorios";
 import SignIn from "./pages/AuthPages/SignInPage/SignIn";
