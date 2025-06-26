@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Input from "../../../components/Input";
 import { useAuth } from "../../../context/authContext";
 import Swal from "sweetalert2";
+import "./SignIn.css";
 
 const SignIn: React.FC = () => {
   const [showPassword] = useState(false);
@@ -26,13 +27,10 @@ const SignIn: React.FC = () => {
         password: password,
       });
 
-      console.log(response);
       const responseData = response.data;
       const { accessToken, refreshToken } = responseData.data;
 
       if (accessToken && refreshToken) {
-        console.log("Access Token:", accessToken);
-        console.log("Refresh Token:", refreshToken);
         handleSetToken(accessToken, refreshToken);
         navigate("/dashboard");
       } else {
@@ -44,7 +42,6 @@ const SignIn: React.FC = () => {
         });
       }
     } catch (error) {
-      console.log("Error during login request:", error);
       Swal.fire({
         title: "Error!",
         text: "An error occurred while attempting to login.",
@@ -55,58 +52,51 @@ const SignIn: React.FC = () => {
   };
 
   return (
-    <div className="h-screen w-screen flex items-center justify-center bg-cover bg-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg flex flex-col max-w-[120vh] max-h-[120vh]">
-        <div className="flex items-center mb-10">
-          <img src='' alt="company-logo" className="w-32" />
-          <div className="ml-4">
-            <h1 className="font-main font-extrabold text-4xl">Food For You</h1>
-            <p className="text-title">Por favor preencha com suas credenciais para fazer o login</p>
-          </div>
+    <div className="signin-container">
+      <div className="signin-form">
+        <div className="signin-title">
+          <h1>Food For You</h1>
+          <p>Por favor preencha com suas credenciais para fazer o login</p>
         </div>
-        <form onSubmit={handleSubmit((data) => handleSignIn(data as SignInRequest))}>
-          <Input
-            {...register("email")}
-            label="Email"
-            placeholder="Email"
-            backgroundColor="bg-dark-white"
-            icon={
-              <button onClick={() => reset({ email: "" })}>
-              </button>
-            }
-          />
-          <Input
-            {...register("password")}
-            label="Senha"
-            placeholder="Senha"
-            backgroundColor="bg-dark-white"
-            type={showPassword ? "text" : "password"}
-          />
+        <form
+          onSubmit={handleSubmit((data) => handleSignIn(data as SignInRequest))}
+        >
+          <div className="signin-input">
+            <Input {...register("email")} label="Email" placeholder="Email" />
+          </div>
+          <div className="signin-input">
+            <Input
+              {...register("password")}
+              label="Senha"
+              placeholder="Senha"
+              type={showPassword ? "text" : "password"}
+            />
+          </div>
 
-          <div className="flex items-center justify-between mb-7">
-            <div className="flex">
+          <div className="signin-checkbox-container">
+            <div>
               <input type="checkbox" />
-              <label className="ml-2">Lembrar de mim</label>
+              <label>Lembrar de mim</label>
             </div>
-            <Link to={""}>
-              <p className="text-primary">Esqueceu sua senha?</p>
+            <Link to={""} className="signin-link">
+              Esqueceu sua senha?
             </Link>
           </div>
 
-          <div>
-            <Button type="submit" title="Entrar" marginBottom="mb-[5px]" />
+          <div className="signin-button-container">
+            <Button type="submit" title="Entrar" />
             <Button
               outline
-              type="submit"
+              type="button"
               title="Entrar com o Google"
-              icon={<img src="src/assets/Google.png" alt="" />}
+              // icon={<img src="src/Assets/google.png" alt="Google Icon" />}
             />
           </div>
         </form>
-        <div className="flex justify-center mt-4">
-          <p className="text-sm title mr-2">Não tem uma conta?</p>
-          <Link to={"/signUp"}>
-            <p className="text-primary text-sm">Crie uma conta</p>
+        <div className="signin-footer">
+          <p className="signin-footer-text">Não tem uma conta?</p>
+          <Link to={"/signUp"} className="signin-footer-link">
+            Crie uma conta
           </Link>
         </div>
       </div>

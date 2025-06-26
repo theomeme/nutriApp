@@ -1,0 +1,107 @@
+/* MaterialUI-inspired CSS for SignIn Page */
+
+.signin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.signin-form {
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.signin-title {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.signin-title h1 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #333333;
+}
+
+.signin-title p {
+  font-size: 14px;
+  color: #666666;
+}
+
+.signin-input {
+  margin-bottom: 16px;
+}
+
+.signin-input input {
+  border-radius: 8px;  /* Adiciona border-radius aos inputs de texto */
+  border: 1px solid #ccc;  /* Adicione bordas se necessário */
+  padding: 10px;  /* Adicione preenchimento interno para melhorar a aparência */
+  width: 100%;  /* Garante que o input ocupe toda a largura disponível */
+  box-sizing: border-box; /* Para incluir padding e border no cálculo da largura */
+}
+
+.signin-checkbox-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.signin-checkbox-container input {
+  margin-right: 8px; 
+}
+
+.signin-checkbox-container label {
+  font-size: 14px;
+  color: #666666;
+}
+
+.signin-link {
+  font-size: 14px;
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.signin-link:hover {
+  text-decoration: underline;
+}
+
+.signin-button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.signin-button-container button {
+  border-radius: 8px;  /* Adiciona border-radius aos botões */
+  padding: 10px;  /* Adicione preenchimento interno para melhorar a aparência */
+  border: none;  /* Remove bordas padrão dos botões */
+  cursor: pointer;  /* Adiciona cursor pointer ao passar o mouse sobre o botão */
+}
+
+.signin-footer {
+  text-align: center;
+}
+
+.signin-footer-text {
+  font-size: 14px;
+  color: #666666;
+}
+
+.signin-footer-link {
+  font-size: 14px;
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.signin-footer-link:hover {
+  text-decoration: underline;
+}
