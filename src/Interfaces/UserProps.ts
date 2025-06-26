@@ -1,9 +1,9 @@
-export interface UserProps{
-    id: string
-    login: string
-    fullName: string
-    clients: [string]
-    agendamentos: AppointmentProps[];
+export interface UserProps {
+  id: string;
+  login: string;
+  fullName: string;
+  clients: [string];
+  agendamentos: string[];
 }
 
 export interface AppointmentProps {
