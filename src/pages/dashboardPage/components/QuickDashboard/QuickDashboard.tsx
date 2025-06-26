@@ -19,7 +19,7 @@ const QuickDashboard: React.FC<Props> = ({ userData }) => {
       const accessToken = await getToken();
       const refreshToken = await getRefreshToken();
 
-      const response = await api.post("/api/v1/auth/logout", {
+      const response = await api.post("/api/v1/nutri/auth/logout", {
         accessToken,
         refreshToken,
       });

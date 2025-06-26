@@ -15,7 +15,7 @@ const Dashboard: React.FC = () => {
 
   const fetchData = async () => {
     try {
-      const response = await api.get("/api/v1/user/me");
+      const response = await api.get("/api/v1/nutri/me");
       setUserData(response.data);
     } catch (error) {
       console.error("Error fetching user data:", error);

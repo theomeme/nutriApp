@@ -21,7 +21,7 @@ const SignIn: React.FC = () => {
 
   const onSubmit = async (data: FormData) => {
     try {
-      const response = await api.post("/api/v1/auth/signupNutri", data);
+      const response = await api.post("/api/v1/nutri/auth/signup", data);
       if (response.status === 201) {
         Swal.fire({
           title: "Success!",
@@ -85,51 +85,6 @@ const SignIn: React.FC = () => {
             placeholder="Senha"
             label="Senha"
           />
-          <div className="flex justify-between">
-            <div className="w-[47%]">
-              <Input
-                {...register("height")}
-                backgroundColor="bg-dark-white"
-                icon={
-                  <button onClick={() => reset({ height: "" })}>
-                  </button>
-                }
-                placeholder="Altura (cm)"
-                label="Altura"
-              />
-            </div>
-            <div className="w-[47%]">
-              <Input
-                {...register("weight")}
-                backgroundColor="bg-dark-white"
-                icon={
-                  <button onClick={() => reset({ weight: "" })}>
-                  </button>
-                }
-                placeholder="Peso (kg)"
-                label="Peso"
-
-              />
-              <p className="text-xs text-subtitle">
-                Você poderá trocar o peso depois
-              </p>
-            </div>
-          </div>
-
-          <div className="flex my-5">
-            <input type="checkbox" className="mr-2" />
-            <p className="text-sm">
-              Ao criar a conta, você aceita nossos Termos de Uso e Políticas de
-              Privacidade.
-            </p>
-          </div>
-          <div className="flex mb-10">
-            <input type="checkbox" className="mr-2 self-start" />
-            <p className="text-sm self-start">
-              Ao criar a conta, você aceita receber mensagens SMS e emails,
-              incluindo atualizações do site, eventos, e promoções.
-            </p>
-          </div>
 
           <Button title="Criar conta" marginBottom="mb-[5px]" />
         </form>

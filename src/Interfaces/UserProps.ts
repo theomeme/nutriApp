@@ -3,5 +3,13 @@ export interface UserProps{
     login: string
     fullName: string
     clients: [string]
-    agendamentos: [string]
+    agendamentos: AppointmentProps[];
+}
+
+export interface AppointmentProps {
+  client: string;
+  date: string;
+  time: string;
+  type: string;
+  status: string;
 }

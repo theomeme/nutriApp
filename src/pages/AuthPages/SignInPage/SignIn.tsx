@@ -21,7 +21,7 @@ const SignIn: React.FC = () => {
   const handleSignIn = async (data: SignInRequest) => {
     const { email, password } = data;
     try {
-      const response = await api.post("/api/v1/auth/login", {
+      const response = await api.post("/api/v1/nutri/auth/login", {
         login: email,
         password: password,
       });
