@@ -89,7 +89,6 @@ const SignIn: React.FC = () => {
               outline
               type="button"
               title="Entrar com o Google"
-              // icon={<img src="src/Assets/google.png" alt="Google Icon" />}
             />
           </div>
         </form>

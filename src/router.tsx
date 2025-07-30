@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate, Outlet } from "react-router-dom";
 import Dashboard from "./pages/dashboardPage/Dashboard";
 import Clientes from "./pages/Clientes/Clientes";
+import ClientDetails from "./pages/Clientes/Componentes/ClientDetails/ClientDetails";
 import Agendamentos from "./pages/Agendamentos";
 import Relatorios from "./pages/Relatorios";
 import SignIn from "./pages/AuthPages/SignInPage/SignIn";
@@ -55,6 +56,10 @@ export const createAppRouter = (isAuthenticated: boolean) => {
         {
           path: "/clientes",
           element: <Clientes />,
+        },
+        {
+          path: "/clientes/:id",
+          element: <ClientDetails />,
         },
         {
           path: "/agendamentos",

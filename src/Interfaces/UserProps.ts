@@ -13,3 +13,14 @@ export interface AppointmentProps {
   type: string;
   status: string;
 }
+
+export interface ClientData {
+  id: string;
+  login: string;
+  fullName: string;
+  height: number;
+  weight: number;
+  status: string;
+  createdAt?: string;
+  updatedAt?: string;
+}

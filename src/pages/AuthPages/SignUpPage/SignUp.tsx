@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import api from "../../../services/api";
-import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import {useForm} from "react-hook-form";
+import {Link, useNavigate} from "react-router-dom";
 import Input from "../../../components/Input";
 import Button from "../../../components/Button";
 import Swal from "sweetalert2";
+import logo from "../../../Assets/Logo.png";
+
+import "./SignUp.css";
 
 interface FormData {
   fullName: string;
@@ -14,9 +17,9 @@ interface FormData {
   weight: string;
 }
 
-const SignIn: React.FC = () => {
+const SignUp: React.FC = () => {
   const [showPassword] = useState(false);
-  const { register, handleSubmit, reset } = useForm<FormData>();
+  const {register, handleSubmit, reset} = useForm<FormData>();
   const navigate = useNavigate();
 
   const onSubmit = async (data: FormData) => {
@@ -47,51 +50,45 @@ const SignIn: React.FC = () => {
   };
 
   return (
-    <div className="h-screen w-screen flex items-center justify-center bg-cover bg-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg flex flex-col max-w-[120vh] max-h-[120vh]">
-        <div className="flex items-center mb-10">
-          <img src="" alt="company-logo" className="w-32"/>
-          <h1 className="font-main font-extrabold text-4xl ml-4">
-            Registre-se agora
-          </h1>
+    <div className="signup-container">
+      <div className="signup-form">
+        <div className="signup-title">
+          {/*<img src={logo} alt="company-logo" className="signup-logo" />'*/}
+          <h1>Registre-se agora</h1>
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <Input
-            {...register("fullName")}
-            placeholder="Nome completo"
-            backgroundColor="bg-dark-white"
-            icon={
-              <button onClick={() => reset({ fullName: "" })}>
-              </button>
-            }
-            label="Nome completo"
+          <div className="signin-input">
+            <Input
+              {...register("fullName")}
+              placeholder="Nome completo"
+              backgroundColor="bg-dark-white"
+              icon={<button onClick={() => reset({fullName: ""})}></button>}
+              label="Nome completo"
+            />
+            <Input
+              {...register("email")}
+              backgroundColor="bg-dark-white"
+              icon={<button onClick={() => reset({email: ""})}></button>}
+              placeholder="Email"
+              label="Email"
+            />
+            <Input
+              {...register("password")}
+              backgroundColor="bg-dark-white"
+              type={showPassword ? "text" : "password"}
+              placeholder="Senha"
+              label="Senha"
+            />
+          </div>
 
-          />
-          <Input
-            {...register("email")}
-            backgroundColor="bg-dark-white"
-            icon={
-              <button onClick={() => reset({ email: "" })}>
-              </button>
-            }
-            placeholder="Email"
-            label="Email"
-
-          />
-          <Input
-            {...register("password")}
-            backgroundColor="bg-dark-white"
-            type={showPassword ? "text" : "password"}
-            placeholder="Senha"
-            label="Senha"
-          />
-
-          <Button title="Criar conta" marginBottom="mb-[5px]" />
+          <div className="signup-button-container">
+            <Button type="submit" title="Criar conta" />
+          </div>
         </form>
-        <div className="flex justify-center">
-          <p className="text-sm text-title mr-2">Já possui uma conta?</p>
-          <Link to={"/signIn"}>
-            <p className="text-primary text-sm">Entrar</p>
+        <div className="signup-">
+          <p className="signup-">Já possui uma conta?</p>
+          <Link to={"/signIn"} className="signup-footer-link">
+            <p className="signup-">Entrar</p>
           </Link>
         </div>
       </div>
@@ -99,4 +96,4 @@ const SignIn: React.FC = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;
